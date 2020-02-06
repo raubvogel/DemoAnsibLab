@@ -1,0 +1,8 @@
+---
+# vars/RedHat.yml
+#
+
+dev_packages:
+#   - "@Development tools"
+   - "@development"
+   - git

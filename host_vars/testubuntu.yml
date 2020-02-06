@@ -1,0 +1,11 @@
+---
+# File: host_vars/testubuntu.yml
+#  Mail server to replace the one being hosted in hostmonster
+# OS: CentOS (for now? Make this so it does not care)
+
+ansible_host: 1.2.3.4
+ansible_port: 22
+ansible_ssh_private_key_file: ~/.ssh/test
+ansible_user: root
+my_name: "{{ ansible_fqdn }}"
+my_domain: "{{ ansible_domain }}"

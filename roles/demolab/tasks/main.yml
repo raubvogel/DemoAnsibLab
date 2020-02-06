@@ -1,0 +1,16 @@
+---
+# tasks/main.yml
+#
+# Main task file
+# We can run other tasks from here, organizing them by function group
+
+- name: Include all vars for "{{ ansible_os_family }}"
+  include_vars: "{{ item }}"
+  loop:
+     - "vars/{{ ansible_os_family }}.yml"
+
+# Set the /etc/hosts for both clients
+# Set the hostnames
+
+- name: Run the performance test
+  include_tasks: perf.yml

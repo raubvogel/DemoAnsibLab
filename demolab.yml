@@ -1,0 +1,15 @@
+---
+# file: demolab.yml
+#
+# Playbook for the demolab demo
+#
+#  As the extension implies, it follows the YAML format.
+
+- hosts: demolab
+
+  vars:
+    - a_variable : 55
+
+  roles: 
+    - demolab
+    

@@ -1,0 +1,31 @@
+---
+# tasks/perf.yml
+#
+# Create dev environment
+# Compile and install iperf3
+# Run it, getting logs
+
+  # state: present "these packages must be present, otherwise install them"
+- name: Get prereq dev packages
+  package:
+    name: "{{ dev_packages }}"
+    state: present
+
+- name: Get iperf3 from github
+  git:
+    repo: https://github.com/esnet/iperf
+    dest: "iperf3"
+
+- name: configure iperf3
+  command:
+    cmd: ./configure
+    creates: Makefile
+  args:
+    chdir: "iperf3"
+
+- name: build iperf3
+  make:
+    target: install
+    chdir: "iperf3"
+
+# Run the performance test

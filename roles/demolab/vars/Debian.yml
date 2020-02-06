@@ -1,0 +1,8 @@
+---
+# vars/Debian.yml
+#
+
+dev_packages:
+   - build-essential
+   - git
+   - python3-apt
